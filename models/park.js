@@ -36,4 +36,31 @@ Park.prototype.countSpecies = function(species){
     return speciesCount;
 }
 
+Park.prototype.countVisits = function(){
+    let visitCount = 0;
+    for (dinosaur of this.dinosaurs){
+        visitCount += dinosaur.guestsAttractedPerDay
+    }
+    return visitCount;
+}
+
+Park.prototype.countVisitsPerYear = function (){
+    let visitCount = 0;
+    for (dinosaur of this.dinosaurs){
+        visitCount += dinosaur.guestsAttractedPerDay
+    }
+    let visitCountPerYear = visitCount * 365;
+    return visitCountPerYear;
+}
+
+Park.prototype.revenuePerYear = function () {
+    let visitCount = 0;
+    for (dinosaur of this.dinosaurs){
+        visitCount += dinosaur.guestsAttractedPerDay
+    }
+    let visitCountPerYear = visitCount * 365;
+    let annualRevenue = visitCountPerYear * this.ticketPrice;
+    return annualRevenue;
+}
+
 module.exports = Park;

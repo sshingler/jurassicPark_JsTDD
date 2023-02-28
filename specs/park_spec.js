@@ -67,10 +67,31 @@ describe('Park', function() {
     assert.strictEqual(park.countSpecies('megalodon').length, 2);
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function (){
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.addDinosaur(dino4);
 
-  it('should be able to calculate the total number of visitors per year');
+    assert.strictEqual(park.countVisits(), 375);
+  } );
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate the total number of visitors per year', function () {
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.addDinosaur(dino4);
+
+    assert.strictEqual(park.countVisitsPerYear(), 136875);
+  });
+
+  it('should be able to calculate total revenue for one year', function () {
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.addDinosaur(dino4);
+
+    assert.strictEqual(park.revenuePerYear(), 13550625);
+  }); 
 
 });
