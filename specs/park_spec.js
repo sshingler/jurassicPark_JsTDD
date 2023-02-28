@@ -11,6 +11,7 @@ describe('Park', function() {
     dino1 = new Dinosaur ('t-rex', 'carnivore', 50);
     dino2 = new Dinosaur ('diplodocus', 'herbivore', 25);
     dino3 = new Dinosaur ('megalodon', 'carnivore', 150);
+    dino4 = new Dinosaur ('megalodon', 'carnivore', 150);
 
 
   })
@@ -57,7 +58,14 @@ describe('Park', function() {
 
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function (){
+    park.addDinosaur(dino1);
+    park.addDinosaur(dino2);
+    park.addDinosaur(dino3);
+    park.addDinosaur(dino4);
+
+    assert.strictEqual(park.countSpecies('megalodon').length, 2);
+  });
 
   it('should be able to calculate the total number of visitors per day');
 
