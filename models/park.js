@@ -20,8 +20,8 @@ Park.prototype.removeDinosaur = function (dinosaur) {
 Park.prototype.mostVisitors = function() {
     let mostVisitors = this.dinosaurs[0]; //assign first dinosaur to 'mostVisitors'
     for (dinosaur of this.dinosaurs){     //loop over dinosaurs in collection
-        if(dinosaur.guestsAttractedPerDay > mostVisitors.guestsAttractedPerDay){ //compare each guestsAttractedPerDay in Dinosaur to dinosaur sdaved as mostVisitors
-            mostVisitors = dinosaur;}
+        if(dinosaur.guestsAttractedPerDay > mostVisitors.guestsAttractedPerDay){ //compare each guestsAttractedPerDay in Dinosaur to dinosaur saved as mostVisitors
+            mostVisitors = dinosaur;}            //if above line true, replace mostVisitors with current dinosaur 
         }
     return mostVisitors; 
 }
